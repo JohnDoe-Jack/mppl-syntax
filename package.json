@@ -1,0 +1,25 @@
+{
+  "name": "mppl-syntax",
+  "displayName": "MPPL Syntax",
+  "description": "Improved MPPL syntax highlighting",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "mppl",
+      "aliases": ["MPPL", "mppl"],
+      "extensions": [".mpl"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "mppl",
+      "scopeName": "source.mpl",
+      "path": "./syntaxes/mppl.tmLanguage.json"
+    }]
+  }
+}
