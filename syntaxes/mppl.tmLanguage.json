@@ -1,32 +1,73 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "MPPL",
-	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		}
-	],
-	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.mppl",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.mppl",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.mppl",
-					"match": "\\\\."
-				}
-			]
-		}
-	},
-	"scopeName": "source.mpl"
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "MPPL",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#string"
+    },
+    {
+      "include": "#comment"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#variables"
+    },
+    {
+      "include": "#function"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.mppl",
+          "match": "\\b(if|while|return|then|else|writeln|write|readln|read|call|begin|end)\\b"
+        }
+      ]
+    },
+    "string": {
+      "name": "string.quoted.single.mppl",
+      "begin": "'",
+      "end": "'",
+      "patterns": [
+        {
+          "name": "constant.character.escape.mppl",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "comment": {
+      "patterns": [
+        {
+          "name": "comment.line.mppl",
+          "match": "\\/*.*\\*\\/"
+        },
+        {
+          "name": "comment.line.mppl",
+          "match": "\\{.*\\}"
+        }
+      ]
+    },
+    "numbers": {
+      "name": "constant.numeric.mppl",
+      "match": "\\b\\d+\\b"
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.mppl",
+          "match": "\\+|-|\\*| div |=|:=|<|>|<=|>=| and | or |\\|\\|"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.mpl"
 }
