@@ -2,7 +2,11 @@
 	"name": "mppl-syntax",
 	"displayName": "MPPL Syntax",
 	"description": "MPPL syntax highlighting",
-	"version": "0.0.1",
+	"version": "1.0.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/JohnDoe-Jack/mppl-syntax"
+	},
 	"engines": {
 		"vscode": "^1.96.0"
 	},
